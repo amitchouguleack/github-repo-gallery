@@ -29,17 +29,16 @@ const displayUserInfo = function (data) {
 };
 
 const gitRepos = async function () {
-  const fetchRepos = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
-  );
+  const fethcRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=created`);
+  const repoData = await fetchRepos.json();
+  displayRepos(repoData);
+};
 
-  const diplayRepos = function (repos) {
-    for (const repo of repos) {
-      const repoItem = document.createElement("li");
-      repoItem.classList.add("repo");
-      repoItem.innerHTML = `<h3>${repo.name}</h3>`;
-      repoList.append(repoItem);
-    }
-  };
-
-  
+const displayRepos = function (repos) {
+  for (const repo of repos) {
+    const repoItem = document.createElement("li");
+    repoItem.classList.add("repo");
+    repoItem.innerHTML = `<h3>${repo.name}</h3>`;
+    repoList.append(repoItem);
+  } 
+};
