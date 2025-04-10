@@ -1,10 +1,10 @@
 // global variable
 const overview = document.querySelector(".overview");
 
-const username = "trunkOfCode_";
+const username = "amitchouguleack";       // replace with your GitHub username
 
 const gitUserInfo = async function () {
-    const userInfo = await fetch(`https://api.github.com/users/${trunkOfCode_}`);
+    const userInfo = await fetch(`https://api.github.com/users/${amitchouguleack}`);
     const data = await userInfo.json();
     displayUserInfo(data);
 };
