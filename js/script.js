@@ -29,7 +29,7 @@ const displayUserInfo = function (data) {
 };
 
 const gitRepos = async function () {
-  const fethcRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=created`);
+  const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=created`);
   const repoData = await fetchRepos.json();
   displayRepos(repoData);
 };
